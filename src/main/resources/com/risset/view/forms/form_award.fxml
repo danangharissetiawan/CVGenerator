@@ -58,7 +58,7 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="319.0" stylesheets="@../css/button2.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="319.0" stylesheets="@../../css/button2.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
                      </GridPane.margin>
