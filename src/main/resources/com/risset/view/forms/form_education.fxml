@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -10,12 +11,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.view.FormPersonalInfo">
+<AnchorPane fx:id="" prefHeight="492.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.controller.EducationFormController">
    <children>
       <Pane prefHeight="39.0" prefWidth="755.0" style="-fx-background-color: #172a45;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -25,7 +27,7 @@
                </font>
             </Label>
          </children></Pane>
-      <VBox layoutX="-2.0" layoutY="37.0" prefHeight="405.0" prefWidth="464.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0">
+      <VBox layoutX="-2.0" layoutY="37.0" prefHeight="489.0" prefWidth="427.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0">
          <children>
             <GridPane prefHeight="243.0" prefWidth="427.0">
               <columnConstraints>
@@ -33,11 +35,12 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="300.99998982747394" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="258.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="258.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="258.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label prefHeight="32.0" prefWidth="99.0" text="School">
@@ -48,7 +51,7 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <TextField GridPane.columnIndex="1">
+                  <TextField fx:id="schoolTxt" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
@@ -73,26 +76,36 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <DatePicker fx:id="sdDate" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
                   </DatePicker>
-                  <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <CheckBox fx:id="presentCBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" top="10.0" />
                      </GridPane.margin>
                   </CheckBox>
-                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <DatePicker fx:id="edDate" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
                   </DatePicker>
-                  <TextArea prefHeight="60.0" prefWidth="349.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextArea fx:id="desTxt" prefHeight="60.0" prefWidth="349.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
                   </TextArea>
+                  <Label prefHeight="32.0" prefWidth="99.0" text="Person" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="personCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                     </GridPane.margin>
+                  </ComboBox>
                </children>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" top="20.0" />
@@ -109,16 +122,16 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <GridPane prefHeight="172.0" prefWidth="427.0">
+            <GridPane prefHeight="179.0" prefWidth="427.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="93.00002034505208" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="293.66664632161456" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="258.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="258.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="258.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="258.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <Label prefHeight="32.0" prefWidth="99.0" text="Major">
@@ -129,17 +142,17 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <TextField GridPane.columnIndex="1">
+                  <TextField fx:id="majorTxt" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="certifyTxt" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="courseTxt" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </GridPane.margin>
@@ -154,11 +167,20 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="319.0" stylesheets="@../../css/button2.css" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="15.0" right="15.0" top="20.0" />
-                     </GridPane.margin>
-                  </Button>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveBtnAction" prefHeight="34.0" prefWidth="264.0" stylesheets="@../../css/button2.css" text="Save">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelBtnAction" prefHeight="34.0" prefWidth="264.0" stylesheets="@../../css/button2.css" text="Cancel">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />

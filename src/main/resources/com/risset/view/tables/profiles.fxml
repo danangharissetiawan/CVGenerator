@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="contentArea" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="contentArea" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.controller.PersonalController">
    <children>
       <ScrollPane fitToWidth="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <content>
@@ -31,12 +31,13 @@
                   </HBox>
                   <TableView fx:id="profileTable" layoutY="61.0" prefHeight="435.0" prefWidth="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0">
                     <columns>
-                      <TableColumn fx:id="fnCol" prefWidth="101.3333410024643" text="Full Name" />
-                      <TableColumn fx:id="emailCol" prefWidth="72.00000762939453" text="Email" />
-                        <TableColumn fx:id="phoneCol" prefWidth="76.66665649414062" text="Phone" />
-                        <TableColumn fx:id="addressCol" prefWidth="99.33329772949219" text="Address" />
-                        <TableColumn fx:id="cityCol" prefWidth="74.6666259765625" text="CIty" />
-                        <TableColumn fx:id="pcCol" prefWidth="70.66668701171875" text="Postal Code" />
+                        <TableColumn fx:id="idCol" prefWidth="54.00000250339508" text="ID" />
+                      <TableColumn fx:id="fnCol" prefWidth="119.33329010009766" text="Full Name" />
+                      <TableColumn fx:id="emailCol" prefWidth="83.33334350585938" text="Email" />
+                        <TableColumn fx:id="phoneCol" prefWidth="78.0" text="Phone" />
+                        <TableColumn fx:id="addressCol" prefWidth="88.6666259765625" text="Address" />
+                        <TableColumn fx:id="cityCol" minWidth="0.0" prefWidth="69.333251953125" text="CIty" />
+                        <TableColumn fx:id="pcCol" prefWidth="109.33343505859375" text="Postal Code" />
                         <TableColumn fx:id="webCol" prefWidth="93.33334350585938" text="Website" />
                     </columns>
                   </TableView>
