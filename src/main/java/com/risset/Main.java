@@ -5,15 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Main extends Application {
     double x, y;
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(HelloApplication.class.getResource("view/main_layout.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("view/main_layout.fxml"));
         Scene sc = new Scene(root);
 //        stage.initStyle(StageStyle.UNDECORATED);
         // move around

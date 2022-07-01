@@ -12,13 +12,13 @@
 
 <StackPane fx:id="contentArea" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fitToWidth="true" layoutY="41.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <ScrollPane fitToWidth="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="337.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="557.0" prefWidth="585.0">
                <children>
                   <HBox alignment="CENTER_LEFT" layoutY="14.0" prefHeight="41.0" prefWidth="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <ComboBox fx:id="skillCombo" prefWidth="150.0" />
+                        <ComboBox fx:id="profileCombo" prefWidth="150.0" />
                         <Button fx:id="addNewBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../css/button2.css" text="Add New">
                            <HBox.margin>
                               <Insets left="50.0" />
@@ -29,11 +29,15 @@
                         <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
                      </padding>
                   </HBox>
-                  <TableView fx:id="skillTable" layoutX="10.0" layoutY="61.0" prefHeight="435.0" prefWidth="317.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                  <TableView fx:id="profileTable" layoutY="61.0" prefHeight="435.0" prefWidth="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0">
                     <columns>
-                      <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
-                        <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
-                      <TableColumn fx:id="levelCol" prefWidth="186.0" text="Level" />
+                      <TableColumn fx:id="fnCol" prefWidth="101.3333410024643" text="Full Name" />
+                      <TableColumn fx:id="emailCol" prefWidth="72.00000762939453" text="Email" />
+                        <TableColumn fx:id="phoneCol" prefWidth="76.66665649414062" text="Phone" />
+                        <TableColumn fx:id="addressCol" prefWidth="99.33329772949219" text="Address" />
+                        <TableColumn fx:id="cityCol" prefWidth="74.6666259765625" text="CIty" />
+                        <TableColumn fx:id="pcCol" prefWidth="70.66668701171875" text="Postal Code" />
+                        <TableColumn fx:id="webCol" prefWidth="93.33334350585938" text="Website" />
                     </columns>
                   </TableView>
                </children>
