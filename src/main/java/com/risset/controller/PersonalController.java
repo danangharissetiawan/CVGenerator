@@ -2,12 +2,16 @@ package com.risset.controller;
 
 import com.risset.entity.Personal;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class PersonalController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class PersonalController implements Initializable {
     @FXML
     private ComboBox<Personal> profileCombo;
     @FXML
@@ -15,19 +19,24 @@ public class PersonalController {
     @FXML
     private TableView<Personal> profileTable;
     @FXML
-    private TableColumn idCol;
+    private TableColumn<Personal, Integer> idCol;
     @FXML
-    private TableColumn fnCol;
+    private TableColumn<Personal, String> fnCol;
     @FXML
-    private TableColumn emailCol;
+    private TableColumn<Personal, String> emailCol;
     @FXML
-    private TableColumn phoneCol;
+    private TableColumn<Personal, String> phoneCol;
     @FXML
-    private TableColumn addressCol;
+    private TableColumn<Personal, String> addressCol;
     @FXML
-    private TableColumn cityCol;
+    private TableColumn<Personal, String> cityCol;
     @FXML
-    private TableColumn pcCol;
+    private TableColumn<Personal, Integer> pcCol;
     @FXML
-    private TableColumn webCol;
+    private TableColumn<Personal, String> webCol;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="contentArea" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.controller.EducationController">
+<StackPane fx:id="contentArea" prefHeight="400.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.controller.EducationController">
    <children>
       <ScrollPane fitToWidth="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <content>
@@ -21,7 +21,12 @@
                         <ComboBox fx:id="eduCombo" prefWidth="150.0" />
                         <Button fx:id="addNewBtn" mnemonicParsing="false" onAction="#addNewBtnAction" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../css/button2.css" text="Add New">
                            <HBox.margin>
-                              <Insets left="50.0" />
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="printBtn" mnemonicParsing="false" onAction="#printBtnAction" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../css/button2.css" text="Print">
+                           <HBox.margin>
+                              <Insets left="30.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -29,15 +34,17 @@
                         <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
                      </padding>
                   </HBox>
-                  <TableView fx:id="eduTable" layoutX="-2.0" layoutY="61.0" prefHeight="435.0" prefWidth="588.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0">
+                  <TableView fx:id="eduTable" layoutX="-2.0" layoutY="61.0" onMouseClicked="#educationTableClicked" prefHeight="435.0" prefWidth="588.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0">
                     <columns>
-                        <TableColumn fx:id="idCol" prefWidth="41.33334481716156" text="ID" />
-                      <TableColumn fx:id="schoolCol" prefWidth="76.66665267944336" text="School" />
-                      <TableColumn fx:id="sdCol" prefWidth="76.6667251586914" text="Start Date" />
-                        <TableColumn fx:id="edCol" prefWidth="77.99998474121094" text="End Date" />
-                        <TableColumn fx:id="presentCol" prefWidth="55.33331298828125" text="Present" />
-                        <TableColumn fx:id="majorCol" prefWidth="96.66668701171875" text="Major" />
-                        <TableColumn fx:id="desCol" prefWidth="160.0" text="Description" />
+                        <TableColumn fx:id="idCol" prefWidth="21.999999046325684" text="ID" />
+                      <TableColumn fx:id="schoolCol" prefWidth="107.33335494995117" text="School" />
+                      <TableColumn fx:id="sdCol" prefWidth="49.33331298828125" text="Start Date" />
+                        <TableColumn fx:id="edCol" prefWidth="70.00003051757812" text="End Date" />
+                        <TableColumn fx:id="presentCol" prefWidth="52.666656494140625" text="Present" />
+                        <TableColumn fx:id="majorCol" prefWidth="74.6666259765625" text="Major" />
+                        <TableColumn fx:id="desCol" prefWidth="84.0" text="Description" />
+                        <TableColumn fx:id="certificateCol" prefWidth="81.33343505859375" text="Certificate" />
+                        <TableColumn fx:id="courseworkCol" prefWidth="97.99993896484375" text="Coursework" />
                     </columns>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

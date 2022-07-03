@@ -5,11 +5,12 @@ module com.risset {
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
-    requires validatorfx;
+//    requires validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
+//    requires eu.hansolo.tilesfx;
     requires java.sql;
+    requires jasperreports;
 
     opens com.risset to javafx.fxml;
     exports com.risset;

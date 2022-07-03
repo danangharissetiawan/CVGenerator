@@ -8,4 +8,8 @@ public interface DaoService<T> {
     List<T> fechAll() throws SQLException, ClassNotFoundException;
 
     int addData(T object) throws SQLException, ClassNotFoundException;
+
+    int updateData(T object) throws SQLException, ClassNotFoundException;
+
+    int deleteData(T object) throws SQLException, ClassNotFoundException;
 }
