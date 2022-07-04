@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="contentArea" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.controller.PersonalController">
+<StackPane fx:id="contentArea" prefHeight="400.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.risset.controller.PersonalController">
    <children>
       <ScrollPane fitToWidth="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <content>
@@ -17,9 +17,14 @@
                <children>
                   <HBox alignment="CENTER_LEFT" layoutY="14.0" prefHeight="41.0" prefWidth="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Button fx:id="addNewBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../css/button2.css" text="Add New">
+                        <Button fx:id="addNewBtn" mnemonicParsing="false" onAction="#addNewBtnAction" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../css/button2.css" text="Add New">
                            <HBox.margin>
                               <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="printBtn" mnemonicParsing="false" onAction="#printBtnAction" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../css/button2.css" text="Print">
+                           <HBox.margin>
+                              <Insets left="30.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -27,16 +32,19 @@
                         <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
                      </padding>
                   </HBox>
-                  <TableView fx:id="profileTable" layoutY="61.0" prefHeight="435.0" prefWidth="585.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0">
+                  <TableView fx:id="profileTable" layoutX="6.0" layoutY="61.0" prefHeight="435.0" prefWidth="709.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="61.0">
                     <columns>
-                        <TableColumn fx:id="idCol" prefWidth="54.00000250339508" text="ID" />
-                      <TableColumn fx:id="fnCol" prefWidth="119.33329010009766" text="Full Name" />
-                      <TableColumn fx:id="emailCol" prefWidth="83.33334350585938" text="Email" />
-                        <TableColumn fx:id="phoneCol" prefWidth="78.0" text="Phone" />
-                        <TableColumn fx:id="addressCol" prefWidth="88.6666259765625" text="Address" />
-                        <TableColumn fx:id="cityCol" minWidth="0.0" prefWidth="69.333251953125" text="CIty" />
-                        <TableColumn fx:id="pcCol" prefWidth="109.33343505859375" text="Postal Code" />
-                        <TableColumn fx:id="webCol" prefWidth="93.33334350585938" text="Website" />
+                        <TableColumn fx:id="idCol" prefWidth="19.999969601631165" text="ID" />
+                      <TableColumn fx:id="fnCol" prefWidth="82.0" text="Full Name" />
+                      <TableColumn fx:id="emailCol" prefWidth="56.666656494140625" text="Email" />
+                        <TableColumn fx:id="phoneCol" prefWidth="52.66668701171875" text="Phone" />
+                        <TableColumn fx:id="addressCol" prefWidth="80.66668701171875" text="Address" />
+                        <TableColumn fx:id="cityCol" minWidth="0.0" prefWidth="60.6666259765625" text="CIty" />
+                        <TableColumn fx:id="pcCol" prefWidth="72.0" text="Postal Code" />
+                        <TableColumn fx:id="linkedinCol" prefWidth="58.6666259765625" text="Linkedin" />
+                        <TableColumn fx:id="githubCol" prefWidth="58.00006103515625" text="Github" />
+                        <TableColumn fx:id="instagramCol" prefWidth="70.00006103515625" text="Instagram" />
+                        <TableColumn fx:id="webCol" prefWidth="124.6666259765625" text="Website" />
                     </columns>
                   </TableView>
                </children>

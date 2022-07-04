@@ -15,7 +15,7 @@ public class PersonalDaoImpl implements DaoService<Personal> {
     public List<Personal> fechAll() throws SQLException, ClassNotFoundException {
         List<Personal> personals = new ArrayList<>();
         try (Connection connection = MySQLConnection.createConnection()) {
-            String query = "SELECT id, full_name, email, phone, address, city, postal_code, website FROM personal";
+            String query = "SELECT * FROM personal";
             try (PreparedStatement ps = connection.prepareStatement(query)) {
                 try (ResultSet rs = ps.executeQuery()) {
                     while (rs.next()) {
@@ -27,6 +27,9 @@ public class PersonalDaoImpl implements DaoService<Personal> {
                         personal.setAddress(rs.getString("address"));
                         personal.setCity(rs.getString("city"));
                         personal.setPostalCode(rs.getInt("postal_code"));
+                        personal.setLinkedin(rs.getString("linkedin"));
+                        personal.setGithub(rs.getString("github"));
+                        personal.setInstagram(rs.getString("instagram"));
                         personal.setWebsite(rs.getString("website"));
                         personals.add(personal);
                     }
@@ -40,7 +43,7 @@ public class PersonalDaoImpl implements DaoService<Personal> {
     public int addData(Personal object) throws SQLException, ClassNotFoundException {
         int result = 0;
         try (Connection connection = MySQLConnection.createConnection()) {
-            String query = "INSERT INTO personal VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
+            String query = "INSERT INTO personal (full_name, email, phone, address, city, postal_code, linkedin, github, instagram, website) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement ps = connection.prepareStatement(query)) {
                 ps.setString(1, object.getFullName());
                 ps.setString(2, object.getEmail());
@@ -66,30 +69,7 @@ public class PersonalDaoImpl implements DaoService<Personal> {
 
     @Override
     public int updateData(Personal object) throws SQLException, ClassNotFoundException {
-        int result = 0;
-        try (Connection connection = MySQLConnection.createConnection()) {
-            String query = "UPDATE personal SET VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
-            try (PreparedStatement ps = connection.prepareStatement(query)) {
-                ps.setString(1, object.getFullName());
-                ps.setString(2, object.getEmail());
-                ps.setString(3, object.getPhone());
-                ps.setString(4, object.getAddress());
-                ps.setString(5, object.getCity());
-                ps.setInt(6, object.getPostalCode());
-                ps.setString(7, object.getLinkedin());
-                ps.setString(8, object.getGithub());
-                ps.setString(9, object.getInstagram());
-                ps.setString(10, object.getWebsite());
-
-                if (ps.executeUpdate() != 0) {
-                    connection.commit();
-                    result = 1;
-                } else {
-                    connection.rollback();
-                }
-            }
-        }
-        return result;
+        return 0;
     }
 
     @Override

@@ -48,13 +48,9 @@ public class MainController implements Initializable {
 
     @FXML
     private void switchToHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/risset/view/tables/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/risset/view/tables/profiles.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(root);
-//        stage = (Stage) homeBtn.getScene().getWindow();
-//        Scene scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
     }
 
     @FXML
@@ -116,7 +112,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/risset/view/tables/home.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/risset/view/tables/profiles.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(root);
         } catch (IOException e) {
